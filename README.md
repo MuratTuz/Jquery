@@ -1,2 +1,1 @@
-# Jquery
-Jquery HTML Applications
+# Horoscope
