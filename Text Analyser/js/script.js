@@ -1,68 +1,80 @@
-$("#goButton").on("click",function(){
-    var arr = []; // main array
+$("#goButton").on("click", function(){
+    
+    //wanted items' array
+    var mapArray = new Map();
+    $(".text2").val().split("").forEach(function(n){
+    mapArray.set(n,0);
+    });          
+    
+    // main string array
+    var arr = []; 
     arr = $(".text1").val().split("");//make an array
-    var control = []; //wanted items' array
-    control = $(".text2").val().split("");//make an array
-    setCalculate(arr, control);
+
+    //index calculater
+    setCalculate(arr, mapArray);
 });
 
-
-function setCalculate(arr, control){
-   var conArr = new Array(control.length);//container array for
-                                    //quantity of wanted items
-    
-    //initializing container array in order to operate math func.
-    for(i=0;i< control.length;i++){
-        conArr[i]=0;
-    }
+/* This function searches @param arr, main array's each element, in wanted item's map array @param mapArray and if found, increase the value of the key in map
+*/
+function setCalculate(arr, mapArray){
 
     arr.forEach(function(item){
-             control.forEach(function find(element, index, control){
-            if (item === element) conArr[index] +=1;
-        }); //search main array's each element in wanted array
-         // if found, get index of wanted array's element //corresponding container array
-    });
- 
-    addChart(control, conArr);
+        for (var key of mapArray.keys()) {
+            if (item === key) {     
+            let ind = mapArray.get(key);
+            mapArray.set(key, ++ind);
+        }//if..
+            
+     }//for..
+        
+}); 
+
+    addChart(mapArray);
 }
 
-function addChart(control, conArr){
+/* This function draw a chart regarding @param mapArray
+   variable
+*/
+function addChart(mapArray){
  
-    var big =0; 
+    var big = 0; 
+    var len = 0;
+    var index = 0;
     var color = ['red','blue','gold','brown','green'];  
-    var cnvs = $('#canvas1');
-    var ctx = cnvs[0].getContext('2d');
-    ctx.clearRect(0, 0, cnvs[0].width, cnvs[0].height);    
+    var cnvs = $('#canvas1')[0];
+    var ctx = cnvs.getContext('2d');
+    ctx.clearRect(0, 0, cnvs.width, cnvs.height);    
     ctx.beginPath();  
     ctx.font="italic bold 15px sans-serif";
     
     // draw chart 
-    control.forEach(function find(element, index, control){
-   
+   mapArray.forEach(function(value, key) {
+       
         ctx.fillStyle="black";
-        ctx.fillText(element,10,(index+1)*30);       
+        ctx.fillText(key,10,(index+1)*30);       
         ctx.fillStyle=color[(index%5)];
-        ctx.fillRect(40,10+(index*30),conArr[index]*15,25);
-        big = (conArr[index]>big) ? conArr[index]:big;
+        ctx.fillRect(40,10+(index*30),value*15,25);
+        big = (value>big) ? value:big;
+        index++;
         });
-    
+   
         // draw axises
-
+           len = mapArray.size;
            ctx.lineWidth = 1;
            ctx.fillStyle="black";   
-        // y axis
+        // draw y axis
             ctx.moveTo(30, 0);
-            ctx.lineTo(30, (control.length+2)*30);
-        // x axis
-            ctx.moveTo(0, (control.length+1)*30);
-            ctx.lineTo(100+big*15, (control.length+1)*30);
+            ctx.lineTo(30, (len+2)*30);
+        // draw x axis
+            ctx.moveTo(0, (len+1)*30);
+            ctx.lineTo(100+big*15, (len+1)*30);
             ctx.stroke();
             ctx.font="italic bold 10px sans-serif";
         
-        // x axis numbers  
+        // fill x axis numbers  
             while(big>=0){
                ctx.fillText(big,35+big*15,
-                           20+(control.length+1)*30);
+                           20+(len+1)*30);
                 --big;
             }
     
