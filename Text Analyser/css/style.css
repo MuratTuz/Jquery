@@ -1,0 +1,61 @@
+.firstcolumn{
+    
+    background-color:gold;
+    border:none;
+    width:600px;
+    margin-top:50px;
+    margin-left: 25px;
+}
+
+.discerceve{
+      
+    background-color:white;
+    border:none;
+    width:100%;
+    float: left
+    margin-top:50px;
+    margin-left: 25px;
+}
+
+.resimcerceve{
+      
+    background-color:white;
+    border:none;
+    width:300px;
+    height: 20px;
+    float: right
+    margin-top:50px;
+    margin-left: 25px;
+}
+
+.textcerceve{
+      
+    background-color:white;
+    border:none;
+    margin-top:20px;
+    margin-left: 25px;
+}
+
+.text1{
+      
+    background-color:wheat;
+    overflow:auto;
+    width:200px;
+    height: 100px;    
+    padding: 5px 5px;
+    border: 0;
+    border-radius: 10px;    
+    margin-top:10px;
+    text-align: left;
+    
+}
+
+
+
+#goButton{
+    
+    margin-left: 20px;
+    width: 100px;
+    font: bold 15px arial, sans-serif;
+}
+
