@@ -1,3 +1,3 @@
 # Jquery
 Jquery HTML Applications
-License is free on charge
+--License is free of charge--
