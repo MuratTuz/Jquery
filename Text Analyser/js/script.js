@@ -10,9 +10,10 @@ $("#goButton").on("click", function(){
     var arr = []; 
     arr = $(".text1").val().split("");//make an array
 
-    //index calculater
+    //index calculator
     setCalculate(arr, mapArray);
 });
+
 
 /* This function searches @param arr, main array's each element, in wanted item's map array @param mapArray and if found, increase the value of the key in map
 */
@@ -32,8 +33,7 @@ function setCalculate(arr, mapArray){
     addChart(mapArray);
 }
 
-/* This function draw a chart regarding @param mapArray
-   variable
+/* This function draws a chart and its axes regarding @param mapArray variable's value
 */
 function addChart(mapArray){
  
@@ -47,7 +47,7 @@ function addChart(mapArray){
     ctx.beginPath();  
     ctx.font="italic bold 15px sans-serif";
     
-    // draw chart 
+    // draw chart and the letters on y axis
    mapArray.forEach(function(value, key) {
        
         ctx.fillStyle="black";
@@ -58,7 +58,7 @@ function addChart(mapArray){
         index++;
         });
    
-        // draw axises
+        // draw axes
            len = mapArray.size;
            ctx.lineWidth = 1;
            ctx.fillStyle="black";   
