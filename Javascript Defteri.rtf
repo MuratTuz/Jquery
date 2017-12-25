@@ -1,0 +1,567 @@
+{\rtf1\ansi\ansicpg1254\deff0\nouicompat\deflang1055\deflangfe1055{\fonttbl{\f0\fswiss\fprq2\fcharset162 Calibri;}{\f1\fswiss\fprq2\fcharset0 Calibri;}{\f2\fmodern\fprq1\fcharset162 Courier New;}{\f3\fswiss\fprq2\fcharset162 Verdana;}{\f4\fswiss\fprq2\fcharset162 Helvetica;}{\f5\fmodern\fprq1\fcharset162 Consolas;}{\f6\fswiss\fprq2\fcharset162 Segoe UI;}{\f7\froman\fprq2\fcharset162 Times New Roman;}{\f8\fswiss\fprq2\fcharset162 Arial;}{\f9\froman\fcharset0 inherit;}{\f10\fnil\fcharset238 Arial;}{\f11\froman\fprq2\fcharset162 Palatino Linotype;}{\f12\fswiss\fprq2\fcharset162 Lucida Sans Unicode;}{\f13\fswiss\fprq2\fcharset238 Calibri;}{\f14\fnil\fcharset2 Symbol;}}
+{\colortbl ;\red0\green0\blue0;\red255\green255\blue255;\red33\green33\blue33;\red175\green175\blue175;\red66\green66\blue66;\red0\green0\blue255;\red120\green144\blue156;\red51\green51\blue51;\red220\green20\blue60;\red241\green241\blue241;\red35\green31\blue32;\red54\green95\blue145;\red204\green204\blue204;}
+{\stylesheet{ Normal;}{\s1 heading 1;}{\s2 heading 2;}{\s3 heading 3;}{\s4 heading 4;}{\s5 heading 5;}}
+{\*\generator Riched20 10.0.16299}{\*\mmathPr\mdispDef1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\nowidctlpar\sa200\sl276\slmult1\b\f0\fs24 document.ready fonksiyonu\par
+
+\pard\nowidctlpar\b0\fs22 <head>\par
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">\par
+ <title>CihanAksoy.com Ready Fonksiyonu \f1\lang1033\'d6rnekleri</title>\par
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>\par
+\b  <script type="text/javascript">\par
+ $(document).ready(function()\{\f0\lang1055   \b0 // ya da k\'fdsalt\'fdlm\'fd\'fe olarak  $(function()\{...  \'feeklinde de yaz\'fdlabilir\b\f1\lang1033\par
+ $('h1').css('color', 'red');\par
+ \});\par
+ </script>\par
+\b0 </head>\par
+<body>\par
+ <h1>Bu elementin k\u305?rm\u305?z\u305? olmas\u305? gerekiyor!</h1>\par
+</body>\par
+
+\pard\brdrb\brdrs\brdrw15\brsp20 \nowidctlpar </html>\par
+
+\pard\nowidctlpar\sa200\sl276\slmult1\b\f0\fs24\lang1055 document.createElement fonksiyonu\par
+
+\pard\nowidctlpar\b0\f1\fs22\lang1033 <p>Click the button to create an ABBR element containing the abbreviation "WHO".</p>\par
+\par
+<button onclick="myFunction()">Try it</button>\par
+\par
+<p id="myP"></p>\par
+\par
+<script>\par
+\b function myFunction() \{\par
+    var x = document.createElement("ABBR");   \b0 //<abbr></abbr> elementini olu\u351?turuyor\b\par
+    var t = document.createTextNode("WHO");  \b0 // WHO isimli yaz\u305?y\u305? olu\u351?turuyor.(iki tag aras\u305?ndaki)\par
+\b     x.setAttribute("title", "World Health Organization");\par
+    x.appendChild(t);\par
+    document.getElementById("myP").appendChild(x);\par
+\b0\}\par
+
+\pard\brdrb\brdrs\brdrw30\brsp20 \nowidctlpar </script>\par
+
+\pard\nowidctlpar\par
+\ul\b\i Canvas - Daire \'e7izme\par
+\ulnone\b0\i0\par
+\cf1\highlight2\f2\fs21\lang1055 var c = document.getElementById("myCanvas");\highlight0\line\highlight2 var ctx = c.getContext("2d");\highlight0\line\highlight2 ctx.beginPath();\highlight0\line\highlight2 ctx.arc(95,50,40,0,2*Math.PI); //Math.PI=180 , 2*Math.PI=360\highlight0\line\highlight2 ctx.stroke();\cf0\highlight0\b\f0\fs24\lang1033\par
+
+\pard{\pntext\f14\'B7\tab}{\*\pn\pnlvlblt\pnf14\pnindent360{\pntxtb\'B7}}\fi-360\li720\sb100\sa100 //\cf1\b0\f3\fs17\lang1055 arc(x,y,r,start,stop)\par
+
+\pard\nowidctlpar\cf0\b\f0\fs24\lang1033\par
+
+\pard\widctlpar\s2\sb150\sa150\cf1\f3\fs20\lang1055 Canvas - E\'f0imler (Gradients)\par
+
+\pard\widctlpar\sb100\sa100\b0 E\'f0imler dikd\'f6rtgenleri, \'e7emberleri, \'e7izgileri, metinleri ya da ba\'feka \'feeyleri doldurmak i\'e7in kullan\'fdl\'fdr. Canvas \'fczerindeki \'feekiller koyu renklerle s\'fdn\'fdrland\'fdr\'fdlmaz.\par
+There are two different types of gradients:\par
+
+\pard{\pntext\f14\'B7\tab}{\*\pn\pnlvlblt\pnf14\pnindent360{\pntxtb\'B7}}\fi-360\li720\sb100\sa100 createLinearGradient(\i x,y,x1,y1\i0 ) - D\'fczg\'fcn e\'f0im yarat\'fdr.\par
+{\pntext\f14\'B7\tab}createRadialGradient(\i x,y,r,x1,y1,r1\i0 ) - \'c7embersel e\'f0im yarat\'fdr.\par
+
+\pard\widctlpar\sb100\sa100\b Parameter\tab Description\par
+
+\pard\widctlpar\li720\b0 x\tab The x-coordinate of the starting circle of the gradient\par
+y\tab The y-coordinate of the starting circle of the gradient\par
+r\tab The radius of the starting circle\par
+x1\tab The x-coordinate of the ending circle of the gradient\par
+y1\tab The y-coordinate of the ending circle of the gradient\par
+r1\tab The radius of the ending circle\par
+
+\pard\widctlpar\sb100\sa100 E\'f0er bir e\'f0imsel nesnemiz varsa, iki ya da daha fazla "color stops" eklemeliyiz.\par
+addColorStop() metodu "color stops"lar\'fd ve onlar\'fdn gradient boyunca olan pozisyonlar\'fdn\'fd belirtir. Gradient'lerin pozisyonlar\'fd 0 ve 1 aras\'fdnda herhangi bir yerde olabilir.\par
+Gradient kullanmak i\'e7in, fillStyle veya strokeStyle \'f6zelli\'f0ini gradient \'fczerinde kullan\'fdn ve dikd\'f6rtgen, metin ya da \'e7izgi gibi \'feekiller \'e7izin.\par
+
+\pard\nowidctlpar\cf0\b\f0\fs24\lang1033\par
+<img> tag //\b0  resim i\'e7indeki nesneleri belirtmek ve kullanmak i\'e7in\par
+\b\par
+\b0 <img src="planets.gif" width="145" height="126" alt="Planets" \b usemap="#planetmap"\b0 >\par
+\par
+<\b map name="planetmap"\b0 >\par
+  <\b area shape\b0 ="rect" coords="75,0,82,126" alt="Sun" href="sun.htm" target="_blank" title="G\'fcne\'fe">\par
+  <\b area shape\b0 ="circle" coords="90,58,3" alt="Mercury" href="mercur.htm" title="Merk\'fcr">\par
+  <\b area shape\b0 ="circle" coords="124,58,8" alt="Venus" href="venus.htm" title="Ven\'fcs">\par
+</map>\par
+\par
+
+\pard{\pntext\f14\'B7\tab}{\*\pn\pnlvlblt\pnf14\pnindent0{\pntxtb\'B7}}\nowidctlpar\fi-360\li720 // <area shape="rect" coords=x1,y1,x2,y2 \'85\par
+{\pntext\f14\'B7\tab}// <area shape="circle" cords=x,y,r \'85\par
+
+\pard\nowidctlpar\li720\par
+
+\pard\nowidctlpar\b <area target\b0  Value\tab\tab Description\par
+
+\pard\nowidctlpar\fi720\li720 _blank\tab\tab Opens the linked document in a new window or tab\par
+_self\tab\tab Opens the linked document in the same frame as it was clicked\par
+_parent\tab Opens the linked document in the parent frame\par
+_top\tab\tab Opens the linked document in the full body of the window\par
+framename\tab Opens the linked document in a named frame\par
+
+\pard\nowidctlpar\b __________________________________________________________________________\par
+\par
+\par
+
+\pard\keep\keepn\widctlpar\s1\sa120\sl276\slmult1\qc\cf3\f4\fs44\lang1055 CSS \'d6l\'e7\'fc Birimleri : em px pt %\par
+
+\pard\keep\keepn\widctlpar\s5\sa120\sl276\slmult1\qc\cf4\fs26 17/02/2009\b0\par
+
+\pard\widctlpar\sa120\sl408\slmult0\cf5 CSS ile kodlama yapan herkes en az\'fdndan bir kere d\'fc\'fe\'fcnm\'fc\'fet\'fcr \ldblquote\'f6l\'e7\'fc birimi olarak px mi kullanmal\'fdy\'fdm em mi?\rdblquote  diye. Ben de \'e7ok d\'fc\'fe\'fcnd\'fcm ve ara\'fet\'fdrd\'fdm. Okuduklar\'fdmdan anlad\'fdklar\'fdm\'fd payla\'femak istiyorum.\par
+\b em nedir? px(pixel)\~nedir? pt(\b0 point\~\b )\~nedir? %(percent)\~nedir?\b0\par
+em ve % ba\'f0\'fdl \'f6l\'e7\'fc birimleridir. Yani body eleman\'fdnda varsay\'fdlan (default) font b\'fcy\'fckl\'fc\'f0\'fcn\'fcze (font-size) ba\'f0l\'fd b\'fcy\'fcme-k\'fc\'e7\'fclme g\'f6steren \'f6l\'e7\'fclerdir. em\rquote in %\rquote den ayr\'fdlan yan\'fd varsay\'fdlan\~\b font b\'fcy\'fckl\'fc\'f0\'fcnde\b0\~ve\b\~font ailesinde\b0 (font-family) yer alan \ldblquote M\rdblquote  harfinin geni\'feli\'f0ini baz almas\'fdd\'fdr. Yani varsay\'fdlan font-size de\'f0erini sabit tutup font-family\rquote i de\'f0i\'fetirdi\'f0inizde bile g\'f6r\'fcnt\'fcde de\'f0i\'feimi g\'f6rebileceksiniz.\par
+px ve pt ise sabit \'f6l\'e7\'fclerdir. Taray\'fdc\'fddan taray\'fdc\'fdya de\'f0i\'fekenlik g\'f6stermezler. Ancak pt\rquote de \'fe\'f6yle bir fark vard\'fdr. DPI tabanl\'fd oldu\'f0undan, sayfa ka\'f0\'fdda bas\'fdld\'fd\'f0\'fdnda monit\'f6rde g\'f6r\'fcnd\'fc\'f0\'fcnden farkl\'fd g\'f6r\'fcn\'fcr. \ldblquote E o zaman hangisini kullanmal\'fd?\rdblquote  derseniz benim \'f6nerim\line ekranda g\'f6sterece\'f0iniz\super\fs19 (1)\nosupersub\fs26\~font b\'fcy\'fckl\'fckleri i\'e7in px\rquote i kullanmak, sayfan\'fdzdan \'e7\'fdkt\'fd\super\fs19 (2)\nosupersub\fs26\~alaca\'f0\'fdn\'fdz sayfalar i\'e7in pt kullanmak.\line <link rel=\rdblquote stylesheet\rdblquote  href=\rdblquote screen-style.css\rdblquote  type=\rdblquote text/css\rdblquote  media=\rdblquote screen\rdblquote  /> (1)\line <link rel=\rdblquote stylesheet\rdblquote  href=\rdblquote print-style.css\rdblquote  type=\rdblquote text/css\rdblquote  media=\rdblquote print\rdblquote  />\~ (2)\par
+\b Peki em mi, px mi?\b0\par
+Bu se\'e7im sizin tercihlerinize ve ihtiyac\'fdn\'fdza ba\'f0l\'fd asl\'fdnda. Bu konuyla ilgili yazaca\'f0\'fdm k\'fds\'fdm tamamen \'feahsi g\'f6r\'fc\'fe\'fcm ve deneyimimdir. Herkes kendince yorumlayabilir.\par
+Sitenizi kullanan ki\'fei bilerek ya da bilmeyerek taray\'fdc\'fds\'fdndaki\~\b Metin Boyutu/Text Size\b0\~ayar\'fdnda varsay\'fdlan\'fdn haricinde bir boyut se\'e7mi\'fe olabilir. Bu durumda siz px se\'e7tiyseniz kullan\'fdc\'fdn\'fdn se\'e7imi bir i\'fee yaramayacakt\'fdr. Yani siz ne g\'f6stermek isterseniz kullan\'fdc\'fd onu g\'f6r\'fcr. Peki ya sizin i\'e7in g\'f6r\'fcnebilir olan font boyutu kullan\'fdc\'fd i\'e7in kar\'fdnca kadarsa? K\'fdsacas\'fd px se\'e7erek kullan\'fdc\'fdn\'fdn se\'e7im \'feans\'fdn\'fd ortadan kald\'fdrm\'fd\'fe olursunuz. Bu durum, kullan\'fdc\'fd a\'e7\'fds\'fdndan\~\ul eri\'feilebilirlik\ulnone\~sorunudur. Ama \'f6yle tasar\'fdmlar vard\'fdr ki bu se\'e7im \'feans\'fdn\'fd ortadan kald\'fdrmak zorunda kal\'fdrs\'fdn\'fdz. \'d6rnek verecek olursam \'e7ok be\'f0endi\'f0iniz bir g\'f6rsel kullanm\'fd\'fes\'fdn\'fdzd\'fdr ve yaz\'fdlar se\'e7ti\'f0inizin d\'fd\'fe\'fdnda bir boyutta kullan\'fdl\'fdrsa tasar\'fdm\'fdn bozulaca\'f0\'fdna ve sitenin etkisini yitirece\'f0ine inan\'fdyorsunuz. O zaman hi\'e7 d\'fc\'fe\'fcnmeyin, px kullan\'fdn\'fdn:)\line\'ddkinci bir \'f6rnek, ayn\'fd sayfada \'e7ok fazla i\'e7erik bulundurdu\'f0unuz bir siteniz var (online gazete gibi). Bu durumda font boyutunu\~\ul sabitlememek\ulnone\~kullan\'fdc\'fd a\'e7\'fds\'fdndan s\'fdk\'fdnt\'fd yaratabilir. Bu durumda da yine hi\'e7 d\'fc\'fe\'fcnmeyin, px kullan\'fdn\'fdn:)\par
+
+\pard\cbpat2\widctlpar\sa120\sl408\slmult0 Diyebilirsiniz ki \ldblquote ben sitemde em de\'f0eri kullanmak istiyorum ama kulland\'fd\'f0\'fdm g\'f6rseller de bozulmasa?\rdblquote . Sorun de\'f0il! \'c7\'fcnk\'fc g\'f6rsellerinize de em de\'f0eri tan\'fdmlayailirsiniz. K\'fdsaca px kulland\'fd\'f0\'fdn\'fdz her yere em tan\'fdmalayabilirsiniz. B\'f6ylece yaz\'fd boyutunuzla ayn\'fd oranda g\'f6rselleriniz de b\'fcy\'fcy\'fcp k\'fc\'e7\'fcl\'fcr.\par
+Tasar\'fdmc\'fd boyut olarak pt kullanm\'fd\'fe ben bunu nas\'fdl em\rquote e/px\rquote e/%\rquote ye \'e7evirece\'f0im?\par
+Bug\'fcn\'fcn taray\'fdc\'fdlar\'fdnda body eleman\'fdnda tan\'fdml\'fd varsay\'fdlan font b\'fcy\'fckl\'fc\'f0\'fc 16px\rquote dir. Kullan\'fdlan oranlar da bu 16 px\rquote e ba\'f0l\'fdd\'fdr.\line Varsay\'fdlan de\'f0erinizi 12 px yapmak isterseniz a\'fea\'f0\'fddaki hesaplarda 16 yerine 12 yazman\'fdz yeterlidir.\par
+\'d6rne\'f0in:\line 12px\rquote lik bir fontu yaz\'fdlar\'fdn\'fdzda kullanmak istiyorsunuz.\line em hesab\'fd:\~ 12px / 16px = 0.75em\line y\'fczde hesab\'fd: 12px / 16px * 100 = 75%\line punto hesab\'fd: 16px * 72 / 96\~ = 12pt\par
+\i Px (piksel) hakk\'fdnda not : Piksel, monit\'f6rlerin \'e7\'f6z\'fcn\'fcrl\'fc\'f0\'fcne g\'f6re de\'f0i\'feiklik g\'f6sterdi\'f0i i\'e7in hesaplanan-ba\'f0lant\'fdl\'fd bir de\'f0er birimidir. \'d6rne\'f0in,\~\b in\'e7 ba\'fe\'fdna d\'fc\'feen nokta\b0\~de\'f0erini temsil eden\~\b DPI\b0\~(\b Dot Per Inch\b0 ) birimine g\'f6re monit\'f6rler genelde\~\b 96 DPI\b0\lquote d\'fdr.({{\field{\*\fldinst{HYPERLINK "http://www.mynotlar.com/html_dom/style/dom_css_olcu_birimleri.aspx"}}{\fldrslt{\ul\cf6\cf7\ul Kaynak}}}}\f4\fs26 )\i0\par
+Tersi durum da s\'f6z konusu. Elinizde em tan\'fdml\'fd bir div vard\'fdr. Tasar\'fdmc\'fddan o alan i\'e7in bir banner isteyeceksiniz. Ya bu alan\'fdn bask\'fd i\'e7in ka\'e7 pt oldu\'f0unu \'f6\'f0renmeniz gerekiyor. O zaman da:\par
+px hesab\'fd: .75em * 16px = 12px\line y\'fczde hesab\'fd .75em * 100 = 75%\line pt hesab\'fd = 0.75em * 16 * 72 / 96 = 9pt\par
+Ayr\'fdca pt\rquote den px\rquote e d\'f6n\'fc\'fe\'fcm gerekirse: 12pt * 96ppi / 72ppi = 16px\par
+Bu hesaplar\'fd \'e7ok kar\'fd\'fe\'fdk bulduysan\'fdz korkmay\'fdn! Her \'feeyin bir \'e7\'f6z\'fcm\'fc var. Bu hesab\'fd bizim i\'e7in yapan siteler var.\line px to em, em to px benzeri aramalarla {\cf0{\field{\*\fldinst{HYPERLINK http://pxtoem.com/ }}{\fldrslt{http://pxtoem.com/\ul0\cf0}}}}\f4\fs26  gibi d\'f6n\'fc\'fet\'fcr\'fcc\'fc sitelere eri\'feebiliyorsunuz. Tek yapman\'fdz gerek varsay\'fdlan font de\'f0erinizi yazmak.\par
+Bu verdi\'f0im bilgilere dayanarak \'f6rnek bir tipografi stili olu\'fetural\'fdm.\par
+
+\pard\brdrl\brdrs\brdrw15\brsp140 \brdrt\brdrs\brdrw15\brsp140 \brdrr\brdrs\brdrw15\brsp140 \brdrb\brdrs\brdrw15\brsp140 \widctlpar\sa120\tx916\tx1832\tx2748\tx3664\tx4580\tx5496\tx6412\tx7328\tx8244\tx9160\tx10076\tx10992\tx11908\tx12824\tx13740\tx14656\cf8\f5\fs20 /* Varsay\'fdlan font de\'f0erlerini body eleman\'fdn\'fdn i\'e7inde belirliyorum.\par
+Bu de\'f0erin 10px olmas\'fdn\'fd yani aksini belirtmedi\'f0im s\'fcrece sayfa boyunca yazd\'fd\'f0\'fdm t\'fcm yaz\'fdlar\'fdn 10px olmas\'fdn\'fd istiyorum.\par
+Bu durumda body nin i\'e7indeki ilk font boyutunu % ile 16px (taray\'fdc\'fdn\'fdn varsay\'fdlan\'fdna g\'f6re oranlayarak) yaz\'fdyorum.\par
+(10px / 16px = 62.5%) */\par
+\par
+body \{ font-size: 62.5%; color: #222;background: #fff; font-family: Arial, Helvetica, sans-serif; \}\par
+h1,h2,h3,h4,h5,h6 \{ font-weight: normal;color: #111;\}\~h1 \{ font-size: 3em; line-height: 1; margin-bottom: 0.5em; \}\par
+h2 \{ font-size: 2em; margin-bottom: 0.75em; \}\par
+h3 \{ font-size: 1.5em; line-height: 1; margin-bottom: 1em; \}\par
+h4 \{ font-size: 1.2em; line-height: 1.25; margin-bottom: 1.25em; \}\par
+h5 \{ font-size: 1em; font-weight: bold; margin-bottom: 1.5em; \}\par
+h6 \{ font-size: 1em; font-weight: bold; \}\par
+
+\pard\cbpat2\widctlpar\sa120\sl408\slmult0\cf5\f4\fs24 Bu \'f6rnekte varsay\'fdlan font b\'fcy\'fckl\'fc\'f0\'fcm 10px oldu\'f0u i\'e7in, taray\'fdc\'fdmda da varsay\'fdlan text size ayarl\'fdysa;\~ h1:30px, h:20px, h3:15px, h4:12px, h5:10px ve h6:10px olacakt\'fdr.\par
+\'d6rne\'f0i g\'f6rmek i\'e7in\~{{\field{\*\fldinst{HYPERLINK "http://www.gozdeberberoglu.com/Ornek-Kod/em-px/tipografi10.html"}}{\fldrslt{\ul\cf6\cf7\ul t\'fdklay\'fdn}}}}\f4\fs24 .\par
+\b Peki bunun nas\'fdl bir faydas\'fd var?\b0\line Aradan biraz zaman ge\'e7ti, sitenin tasar\'fdm\'fd eskidi, yenisi yap\'fdld\'fd. Bu sefer kullanmak istedi\'f0imiz font b\'fcy\'fckl\'fc\'f0\'fcn\'fcn 12px olmas\'fd istendi. Tek yapman\'fdz gereken body i\'e7indeki font-size de\'f0erini 75% olarak de\'f0i\'fetirmek.\par
+\'d6rne\'f0i g\'f6rmek i\'e7in\~{{\field{\*\fldinst{HYPERLINK "http://www.gozdeberberoglu.com/Ornek-Kod/em-px/tipografi12.html"}}{\fldrslt{\ul\cf6\cf7\ul t\'fdklay\'fdn}}}}\f4\fs24 .\par
+S\'f6z\'fcn\'fc etti\'f0im 4\~{{\field{\*\fldinst{HYPERLINK "http://www.w3schools.com/css/css_units.asp"}}{\fldrslt{\ul\cf6\cf7\ul\'f6l\'e7\'fc birimi}}}}\f4\fs24 nin d\'fd\'fe\'fdnda cm, in, mm, ex ve pc de bulunmaktad\'fdr ama ben en \'e7ok kullan\'fdlanlara ve kafa kar\'fd\'fet\'fdranlara de\'f0inmek istedim.Bu konuyla ilgili T\'fcrk\'e7e yaz\'fd \'e7ok az oldu\'f0u i\'e7in de bunlar\'fd yazma ihtiyac\'fd hissettim. Fikriniz / ele\'fetiriniz / ekleyecekleriniz olursa payla\'feman\'fdzdan \'e7ok memnun olurum.\line Kulland\'fd\'f0\'fdm kaynaklar:\par
+{{\field{\*\fldinst{HYPERLINK "http://pxtoem.com/"}}{\fldrslt{\ul\cf6\cf7\ul px to em}}}}\f4\fs24\~,\~{{\field{\*\fldinst{HYPERLINK "http://www.thesug.org/blogs/kyles/Lists/Posts/Post.aspx?List=89c8858b-90d2-4750-a11a-e599248e6c69&ID=22"}}{\fldrslt{\ul\cf6\cf7\ul The Sug}}}}\f4\fs24\~,\~{{\field{\*\fldinst{HYPERLINK "http://jontangerine.com/log/2007/09/the-incredible-em-and-elastic-layouts-with-css"}}{\fldrslt{\ul\cf6\cf7\ul John Tangarine}}}}\f4\fs24\~,\~{{\field{\*\fldinst{HYPERLINK "http://www.kyleschaeffer.com/?p=18"}}{\fldrslt{\ul\cf6\cf7\ul Kyle Schaeffer}}}}\f4\fs24\par
+
+\pard\cbpat2\widctlpar\sb150\sa150\cf1\kerning36\f6\fs52 CSS\~Layout - The display\~Property\par
+
+\pard\cbpat2\widctlpar\sb100\sa100\kerning0\f3\fs22 The\~\cf9\highlight10\f5\fs24 display\cf1\highlight0\f3\fs22\~property is the most important CSS property for controlling layout.\cf0\f7{\pict{\*\picprop}\wmetafile8\picw1764\pich882\picwgoal10\pichgoal5 
+010009000003d000000006001c00000000000400000003010800050000000b0200000000050000
+000c0227006d10040000002e0118001c000000fb021000070000000000bc020000000001020222
+53797374656d0001705f1801705f180101000000705f1801430b2affffffffff040000002d0100
+00040000002d01000004000000020101001c000000fb02a4ff0000000000009001000000a20440
+002243616c6962726900000000000000000000000000000000000000000000000000040000002d
+010100040000002d010100040000002d010100050000000902000000020d000000320a57000000
+0100040000000000681026002000360005000000090200000002030000001e0007000000fc0200
+00000000000000040000002d01020008000000fa02050000000000ffffff00040000002d010300
+0e000000240305000000ffff00002500681025006810ffff0000ffff08000000fa020000000000
+0000000000040000002d01040007000000fc020000ffffff000000040000002d01050004000000
+2701ffff040000002d010000040000002d010000030000000000
+}\cf1\f3\par
+
+\pard\cbpat2\widctlpar\sb150\sa150\f6\fs44 The display Property\par
+
+\pard\cbpat2\widctlpar\sb100\sa100\f3\fs22 The\~\cf9\highlight10\f5\fs24 display\cf1\highlight0\f3\fs22\~property specifies if/how an element is displayed.\par
+Every HTML element has a default display value depending on what type of element it is. The default display value for most elements is\~\cf9\highlight10\f5\fs24 block\cf1\highlight0\f3\fs22\~or\~\cf9\highlight10\f5\fs24 inline\cf1\highlight0\f3\fs22 .\cf0\f7{\pict{\*\picprop}\wmetafile8\picw1764\pich882\picwgoal10\pichgoal5 
+010009000003d000000006001c00000000000400000003010800050000000b0200000000050000
+000c0227006d10040000002e0118001c000000fb021000070000000000bc020000000001020222
+53797374656d00015067180150671801010000005067180107093cffffffffff040000002d0100
+00040000002d01000004000000020101001c000000fb02a4ff0000000000009001000000a20440
+002243616c6962726900000000000000000000000000000000000000000000000000040000002d
+010100040000002d010100040000002d010100050000000902000000020d000000320a57000000
+0100040000000000681026002000360005000000090200000002030000001e0007000000fc0200
+00000000000000040000002d01020008000000fa02050000000000ffffff00040000002d010300
+0e000000240305000000ffff00002500681025006810ffff0000ffff08000000fa020000000000
+0000000000040000002d01040007000000fc020000ffffff000000040000002d01050004000000
+2701ffff040000002d010000040000002d010000030000000000
+}\cf1\f3\par
+
+\pard\cbpat2\widctlpar\sb150\sa150\f6\fs36 Block-level Elements\par
+
+\pard\cbpat2\widctlpar\sb100\sa100\f3\fs22 A block-level element always starts on a new line and takes up the full width available (stretches out to the left and right as far as it can).\par
+
+\pard\cbpat2\widctlpar The <div> element is a block-level element.\par
+
+\pard\cbpat2\widctlpar\sb100\sa100 Examples of block-level elements:\par
+
+\pard\cbpat2{\pntext\f14\'B7\tab}{\*\pn\pnlvlblt\pnf14\pnindent360{\pntxtb\'B7}}\fi-360\li720\sb100\sa100 <div>\par
+{\pntext\f14\'B7\tab}<h1> - <h6>\par
+{\pntext\f14\'B7\tab}<p>\par
+{\pntext\f14\'B7\tab}<form>\par
+{\pntext\f14\'B7\tab}<header>\par
+{\pntext\f14\'B7\tab}<footer>\par
+{\pntext\f14\'B7\tab}<section>\par
+
+\pard\cbpat2\widctlpar\sb150\sa150\f6\fs36 Inline Elements\par
+
+\pard\cbpat2\widctlpar\sb100\sa100\f3\fs22 An inline element does not start on a new line and only takes up as much width as necessary.\par
+This is\~an inline <span> element inside\~a paragraph.\par
+Examples of inline elements:\par
+
+\pard\cbpat2{\pntext\f14\'B7\tab}{\*\pn\pnlvlblt\pnf14\pnindent360{\pntxtb\'B7}}\fi-360\li720\sb100\sa100 <span>\par
+{\pntext\f14\'B7\tab}<a>\par
+{\pntext\f14\'B7\tab}<img>\par
+
+\pard\cbpat2\widctlpar\sb150\sa150\f6\fs36 Display: none;\par
+
+\pard\cbpat2\widctlpar\sb100\sa100\cf9\highlight10\f5\fs24 display: none;\cf1\highlight0\f3\fs22\~is commonly used with JavaScript to hide and show elements without deleting and recreating them. Take a look at our last example on this page if you want to know how this can be achieved.\par
+The\~\cf9\highlight10\f5\fs24 <script>\cf1\highlight0\f3\fs22\~element uses\~\cf9\highlight10\f5\fs24 display: none;\cf1\highlight0\f3\fs22\~as default.\~\cf0\f0\fs20\par
+
+\pard\cbpat2\widctlpar\sa120\sl408\slmult0\cf5\f4\fs24\par
+
+\pard\nowidctlpar\cf0\b\f0\lang1033 ___________________________________________________________________________\par
+\par
+JQUERY Giri\'fe bilgileri\par
+\par
+
+\pard\widctlpar\sa80\cf11\f8\lang1055 jQuery Nedir?\par
+\b0\fs20 Sayfa \'fczerindeki kontrollerin bir\'e7o\'f0unu kullan\'fdc\'fd taraf\'fdnda yapmam\'fdz\'fd kolayla\'fet\'fdran, ajax ile sayfa yenilenmeden i\'e7eri\'f0i g\'fcncellememize olanak tan\'fdyan, CSS animasyonlar\'fd ile sunumu g\'f6rselle\'fetirmemize yarayan ve DOM y\'f6netimini \'f6nemli \'f6l\'e7\'fcde kolayla\'fet\'fdran jQuery; 2005 y\'fdl\'fdndan beri geli\'fetirilen \ldblquote a\'e7\'fdk kaynak kodlu\rdblquote  bir JavaScript k\'fct\'fcphanesidir.\par
+Az yer kaplamas\'fd (32kb) ve kullan\'fdm\'fdn\'fdn \'e7ok basit olmas\'fd nedeniyle d\'fcnya \'fczerinde en \'e7ok kullan\'fdlan JavaScript k\'fct\'fcphanelerinin ba\'fe\'fdn\'fd \'e7ekmektedir.\par
+\b\fs24 jQuery Nas\'fdl Kullan\'fdl\'fdr?\par
+\b0\fs20 jQuery\rquote i kullanmak i\'e7in jQuery dosyalar\'fdndan birini (\i\f9 jquery.js veya jquery.min.js\i0\f8 ) sayfam\'fdza eklemeliyiz. Dosyam\'fdz\'fd sayfaya eklemeyi \'f6\'f0renmeden \'f6nce, dosyalar\'fdn\'fdn farklar\'fdn\'fd \'f6\'f0renelim.\par
+\b\fs24 jquery.js ile jquery.min.js aras\'fdndaki fark nedir?\par
+\b0\fs20 Kullan\'fdm a\'e7\'fds\'fdndan\~\i\f9 jquery.js\i0\f8\~ile\~\i\f9 jquery.min.js\i0\f8\~aras\'fdnda bir fark yoktur.\~\i\f9 jquery.js\i0\f8\~dosyas\'fd, jQuery kodlar\'fdn\'fdn tamam\'fdn\'fd oldu\'f0u gibi i\'e7inde bar\'fdnd\'fdran, boyutu\~\i\f9 jquey.min.js\i0\f8\lquote ye g\'f6re daha b\'fcy\'fck dosyad\'fdr. Boyutu k\'fc\'e7\'fck olan\~\i\f9 jquery.min.js\i0\f8\~ise\~\i\f9 jquery.js\i0\f8\lquote nin\~\b\f9 s\f10\u305?\f9 k\f10\u305?\'ba\f9 t\f10\u305?\f9 r\f10\u305?\f9 lm\f10\u305?\'ba\b0\f8\~halidir. Web sayfas\'fdn\'fdn performans\'fd a\'e7\'fds\'fdndan\~\i\f9 jquery.min.js\i0\f8\lquote yi kullanman\'fdz \'f6nerilir.\par
+\b\fs23 jQuery dosyam\'fdz\'fd yerel sunucudan sayfam\'fdza eklemek\par
+\b0\fs20 Kendi (yerel) sunucumuzda bar\'fdnan jQuery dosyas\'fdn\'fd sayfam\'fdza a\'fea\'f0\'fddaki kod ile ekleyebiliriz.\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 <script\f7\fs24  \f2\fs20 type="text/javascript"\f7\fs24  \f2\fs20 src="jquery.min.js"></script>\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\b\f8\fs23 jQuery dosyam\'fdz\'fd CDN ile sayfam\'fdza eklemek\par
+\b0\fs20 CDN (\b\f9 C\b0\f8 ontent\~\b\f9 D\b0\f8 istribution\~\b\f9 N\b0\f8 etwork), statik i\'e7erikleri bar\'fdnd\'fdrmaya yarayan bir \'e7e\'feit depolama alan\'fdd\'fdr. Site y\'fcklenirken bu dosyalar\'fd kendi (yerel) sunucumuzdan \'e7a\'f0\'fdrmak yerine ba\'feka bir sunucudan \'e7a\'f0\'fdr\'fdr\'fdz. Bunun ne gibi avantajlar\'fd vard\'fdr?\par
+
+\pard 
+{\pntext\f9 1.\tab}{\*\pn\pnlvlbody\pnf9\pnindent1065\pnstart1\pndec{\pntxta.}}
+\fi-360\li15\sa80\f9 CDN\rquote lerin bir\'e7ok yerde sunucular\f10\u305?\f9  vard\f10\u305?\f9 r. Siteyi ziyaret eden kullan\f10\u305?\f9 c\f10\u305?\f9  farkl\f10\u305?\f9  bir \'fclkeden giriyorsa, dosyam\f10\u305?\f9 z girdi\f10\u287?\f9 i \'fclkedeki sunucudan y\'fcklenir ve sitemiz d\'fcnyan\f10\u305?\f9 n her yerinde ayn\f10\u305?\f9  h\f10\u305?\f9 zla y\'fcklenir.\par
+{\pntext\f9 2.\tab}Web taray\f10\u305?\f9 c\f10\u305?\f9 lar\f10\u305?\f9 n\f10\u305?\f9 n farkl\f10\u305?\f9  sunuculardan paralel download yapmas\f10\u305?\f9 na olanak sa\f10\u287?\f9 lar. Bu sayede sayfan\f10\u305?\f9 n y\'fcklenme h\f10\u305?\f9 z\f10\u305?\f9  artar.\par
+
+\pard\widctlpar\sa80\f8 jQuery dosyas\'fdn\'fd Google CDN kullanarak sayfam\'fdza a\'fea\'f0\'fddaki kod ile ekleyebiliriz.\par
+\trowd\trgaph10\trleft-1427\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx-947\clvertalc\cellx12418 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 <script\f7\fs24  \f2\fs20 type="text/javascript"\f7\fs24  \f2\fs20 src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\b\f8\fs23 CDN\rquote de hata oldu, jQuery dosyam\'fdz y\'fcklenemedi\par
+\b0\fs20 CDN\rquote de hata oldu veya local\rquote de bir site kodluyoruz, internetimiz yok. jQuery dosyam\'fdz sayfam\'fdza y\'fcklenmiyor. Bu durumda ne yapmal\'fdy\'fdz? \'ddzleyece\'f0imiz yol \'e7ok basit.\par
+
+\pard 
+{\pntext\f9 1.\tab}{\*\pn\pnlvlbody\pnf9\pnindent1065\pnstart1\pndec{\pntxta.}}
+\fi-360\li15\sa80\f9 CDN ile jQuery dosyam\f10\u305?\f9 z\f10\u305?\f9  sayfam\f10\u305?\f9 za ekleyece\f10\u287?\f9 iz.\par
+{\pntext\f9 2.\tab}jQuery sayfaya y\'fcklenmi\f10\'ba\f9  mi y\'fcklenmemi\f10\'ba\f9  mi kontrol edece\f10\u287?\f9 iz.\par
+{\pntext\f9 3.\tab}E\f10\u287?\f9 er y\'fcklenmemi\f10\'ba\f9 se jQuery dosyas\f10\u305?\f9 n\f10\u305?\f9  yerel (local) sunucumuzdan \'e7a\f10\u287?\u305?\f9 raca\f10\u287?\u305?\f9 z.\par
+\trowd\trgaph10\trleft-1427\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx-947\clvertalc\cellx12523 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\par
+2\par
+3\cell\f2\fs20 <script\f7\fs24  \f2\fs20 type="text/javascript"\f7\fs24  \f2\fs20 src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>\f7\fs24\par
+\~\par
+\f2\fs20 <script\f7\fs24  \f2\fs20 type="text/javascript">window.jQuery || document.write('<script\f7\fs24  \f2\fs20 src="jquery.min.js"><\\/script>')</script>\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\b\f8\fs23 Yaz\'fdm Kurallar\'fd\par
+\b0\fs20 jQuery k\'fct\'fcphanesiyle kod yazarken komutlar\'fdm\'fdz\'fdn ba\'fe\'fdna\~\b\f9 $\b0\f8\~veya\~\b\f9 jQuery\b0\f8\~ifadelerinden birini koymal\'fdy\'fdz. Bu kodlar bizim jQuery k\'fct\'fcphanesinde i\'fe yapaca\'f0\'fdm\'fdz anlam\'fdna gelir. jQuery yaz\'fdm \'feekli basittir. Genel komutlarda \'f6nce jQuery k\'fct\'fcphanesinde i\'fe yapaca\'f0\'fdm\'fdz\'fd s\'f6yleriz, sonras\'fdnda element\rquote imizi se\'e7eriz, sonuna metodumuzu yazarak komutumuzu bitiririz. Mesela:\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 $("#kirlikirpi").fadeIn();\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\f8\fs20 dipnot: jQuery bir JavaScript k\'fct\'fcphanesi oldu\'f0u i\'e7in JavaScript yaz\'fdm kurallar\'fd, jQuery i\'e7in de ge\'e7erlidir. Bu nedenle komutlar\'fdm\'fdz\'fd\~\b\f9 ; (noktal\f10\u305?\f9  virg\'fcl)\b0\f8\~ile bitirmeliyiz.\par
+\'d6rnek jQuery sat\'fdr\'fd:\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 jQuery("#kirlikirpi").html("Hello World!");\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\f8\fs20 Ayn\'fd i\'felevi g\'f6ren ba\'feka bir jQuery sat\'fdr\'fd:\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 $("#kirlikirpi").html("Hello World!");\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\b\f8\fs23 Fonksiyon Yaz\'fdm Kurallar\'fd\par
+\b0\fs20 Birden fazla fonksiyon yazma y\'f6ntemi vard\'fdr. Basitten kar\'fd\'fe\'fd\'f0a do\'f0ru birka\'e7 \'f6rnekle fonksiyon yazmay\'fd g\'f6sterece\'f0im.\par
+\'d6rnek fonksiyon yaz\'fdm\'fd 1:\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\par
+2\par
+3\cell\f2\fs20 function\f7\fs24  \f2\fs20 kirlikirpi() \{\f7\fs24\par
+\f2\fs20\~\~\~\~// i\'felemler\f7\fs24\par
+\f2\fs20\};\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\f8\fs20 Kullan\'fdm\'fd:\~\b\f9 kirlikirpi();\b0\f8\par
+\'d6rnek fonksiyon yaz\'fdm\'fd 2:\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\par
+2\par
+3\cell\f2\fs20 $.kirlikirpi= function() \{\f7\fs24\par
+\f2\fs20\~\~\~\~// i\'felemler\f7\fs24\par
+\f2\fs20\};\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\f8\fs20 Kullan\'fdm\'fd:\~\b\f9 $.kirlikirpi();\b0\f8\par
+\'d6rnek fonksiyon yaz\'fdm\'fd 3:\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx600\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\par
+2\par
+3\par
+4\par
+5\par
+6\par
+7\par
+8\par
+9\par
+10\par
+11\par
+12\par
+13\par
+14\par
+15\par
+16\par
+17\cell\f2\fs20 $.kirlikirpi= \{\f7\fs24\par
+\f2\fs20\~\~\~\~carp: function() \{\f7\fs24\par
+\f2\fs20\~\~\~\~\~\~\~\~// i\'felemler\f7\fs24\par
+\f2\fs20\~\~\~\~\},\f7\fs24\par
+\~\par
+\f2\fs20\~\~\~\~bol: function() \{\f7\fs24\par
+\f2\fs20\~\~\~\~\~\~\~\~// i\'felemler\f7\fs24\par
+\f2\fs20\~\~\~\~\},\f7\fs24\par
+\~\par
+\f2\fs20\~\~\~\~topla: function() \{\f7\fs24\par
+\f2\fs20\~\~\~\~\~\~\~\~// i\'felemler\f7\fs24\par
+\f2\fs20\~\~\~\~\},\f7\fs24\par
+\~\par
+\f2\fs20\~\~\~\~cikar: function() \{\f7\fs24\par
+\f2\fs20\~\~\~\~\~\~\~\~// i\'felemler\f7\fs24\par
+\f2\fs20\~\~\~\~\}\f7\fs24\par
+\f2\fs20\};\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\f8\fs20 Kullan\'fdm\'fd:\~\b\f9 $.kirlikirpi.bol();\b0\f8\par
+\b\fs29 Se\'e7iciler\par
+\b0\fs20 jQuery ile bir \'feeyleri se\'e7ip, onlar\'fdn \'fcst\'fcnde oynayabilirsiniz. Se\'e7iciler \'e7ok basittir, sadece\~\b\f9 $(se\'e7ici);\b0\f8\~\'feeklinde yazarak kullanabilirsiniz.\par
+\b\fs23 ID ve Class Se\'e7icileri\par
+\b0\fs20 Sayfa \'fczerinde id\rquote si kirlikirpi olan ilk element:\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 $("#kirlikirpi");\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\f8\fs20 Sayfa \'fczerinde class\rquote\'fd kirlikirpi olan element\rquote ler:\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 $(".kirlikirpi");\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\f8\fs20 Sayfa \'fczerinde class\rquote\'fd kirlikirpi veya foo olan element\rquote ler:\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 $(".kirlikirpi, .foo");\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\b\f8\fs23 Nitelik Se\'e7icileri\par
+\b0\fs20 Bir element\rquote e ait\~\b\f9 name\b0\f8 ,\~\b\f9 value\b0\f8 ,\~\b\f9 type\b0\f8 ,\~\b\f9 id\b0\f8 ,\~\b\f9 class\b0\f8\~gibi de\'f0erlere g\'f6re i\'felem yapmam\'fdz\'fd sa\'f0layan nitelik se\'e7icilerinin \'f6rneklerini a\'fea\'f0\'fdda bulabilirsiniz.\par
+Sayfa \'fczerinde type\rquote\'fd text olan input\rquote lar:\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 $("input[type='text']");\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\f8\fs20 Sayfa \'fczerinde href\rquote i wm olan a\rquote lar:\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 $("a[href='wm']");\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\b\f8\fs23 S\'fdralama Se\'e7icileri\par
+\b0\fs20 Bu ba\'fel\'fd\'f0\'fd nas\'fdl isimlendirece\'f0imi \'e7ok d\'fc\'fe\'fcnd\'fcm. S\'fdralama Se\'e7icileri, bir element\rquote in s\'fdras\'fdna g\'f6re i\'felem yapman\'fdz\'fd sa\'f0lar. Se\'e7ici isimleri\~\b\f9 :first\b0\f8 ,\~\b\f9 :last\b0\f8 ,\~\b\f9 :odd\b0\f8 ,\~\b\f9 :even\b0\f8 ,\~\b\f9 :eq(index)\b0\f8\~gibi devam edebilir.\par
+Sayfa \'fczerindeki ilk ul:\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 $("ul:first");\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\f8\fs20 Sayfa \'fczerindeki son ul:\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 $("ul:last");\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\f8\fs20 Tek say\'fdl\'fd li\rquote ler (1-3-5-7-9):\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 $("ul li:odd");\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\f8\fs20\'c7ift say\'fdl\'fd li\rquote ler (2-4-6-8):\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 $("ul li:even");\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\f8\fs20 Sayfa \'fczerindeki 3. (\'fc\'e7\'fcnc\'fc) ul:\par
+\trowd\trgaph10\trpaddl10\trpaddr10\trpaddfl3\trpaddfr3
+\clvertalc\cellx480\clvertalc\cellx13845 
+\pard\intbl\widctlpar\sa80\cf0\f7\fs24 1\cell\f2\fs20 $("ul:eq(2)");\f7\fs24\cell\row 
+\pard\widctlpar\sa80\cf11\f8\fs20 dipnot: :eq kullan\'fdrken saymaya 0 (s\'fdf\'fdr) say\'fds\'fdndan ba\'felamay\'fd unutmay\'fdn\'fdz.\par
+Se\'e7iciler konumun sonuna geldim. Daha fazla se\'e7iciyi ve daha \'e7ok \'f6rne\'f0i Kaynaklar\rquote da linkini payla\'fet\'fd\'f0\'fdm w3schools sayfas\'fdndan bulabilirsiniz.\par
+\par
+\b\fs23 For Performance of Jquery\par
+\b0\fs20 De\'f0i\'fekenleri kullanarak jquery nin her defas\'fdnda sorgu yapmas\'fdn\'fd \'f6nl\'fcyoruz. Bir defa sorgu yap\'fdp DOM elementlerini bulup de\'f0erlerini(document numaralar\'fd) de\'f0ikene at\'fdp kullan\'fdyoruz.\par
+\par
+   //cache DOM elements\tab\tab\tab\tab Ya da bu \'feekilde\par
+    var $slider = $('#slider');\tab\tab\tab\tab var $slider=$(\ldblquote #slider\rdblquote );\par
+    var $slideContainer = $('.slides', $slider);\tab\tab var $slideContainer = $slider.find(\ldblquote .slides\rdblquote );\par
+    var $slides = $('.slide', $slider);\tab\tab\tab var $kaydirici = $slideContainer.find(\ldblquote .slide);\par
+
+\pard\nowidctlpar\sa80\cf0\b\f0\fs24\lang1033\par
+
+\pard\widctlpar\sa80             \cf11\b0\f8\fs20\lang1055 <div id="slider">\par
+                <ul class="slides">\par
+                    <li class="slide slide1">slide1</li>\par
+                    <li class="slide slide2">slide2</li>\par
+
+\pard\brdrb\brdrs\brdrw30\brsp20 \widctlpar\sa80                 </ul></div>\par
+\par
+
+\pard\widctlpar\sa80\par
+
+\pard\keep\keepn\widctlpar\s1\sl276\slmult1\cf12\f0\fs32\lang1033 CSS \cf8\b\f11\fs28\lang1055 Attribute selectors\par
+
+\pard\nowidctlpar {\cf0\b0\f0\fs24\lang1033{\field{\*\fldinst{HYPERLINK https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors }}{\fldrslt{https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors\ul0\cf0}}}}\cf0\b0\f0\fs24\lang1033\par
+\b\fs32\par
+\b0\fs24 Set a background color on all <div> elements that have a class attribute value containing "test":\par
+\par
+div[class*="test"] \{\par
+    background: #ffff00;\par
+\}\par
+\b\par
+
+\pard\widctlpar\sa80\cf11\f8\fs29\lang1055 CSS Selector Order\par
+
+\pard\cbpat2\widctlpar\sb100\sa100 {\cf0\b0\f12\fs24{\field{\*\fldinst{HYPERLINK https://css-tricks.com/specifics-on-css-specificity/ }}{\fldrslt{https://css-tricks.com/specifics-on-css-specificity/\ul0\cf0}}}}\cf1\b0\f12\fs24\par
+
+\pard\cbpat2\widctlpar\s3\sb100\sa100\b Calculating CSS Specificity Value\par
+
+\pard\cbpat2\widctlpar\sb100\sa100\b0 Why is that our first attempt at changing the color and font-weight failed? As we learned, it was because simply using the class name by itself had a\~\i lower specificity value\i0\~and was trumped by the other selector which targeted the unordered list with the ID value. The important words in that sentence were\~\b class\b0\~and\~\b ID\b0 . CSS applies vastly different specificity weights to classes and IDs. In fact, an ID has\~\i infinitely\i0\~more specificity value! That is, no amount of classes alone can outweigh an ID.\par
+Let's take a look at how the numbers are actually calculated:\par
+\par
+In otherwords:\par
+
+\pard\cbpat2{\pntext\f14\'B7\tab}{\*\pn\pnlvlblt\pnf14\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa75 If the element has inline styling, that automatically\super\fs20 1\nosupersub\fs24\~wins (1,0,0,0 points)\par
+{\pntext\f14\'B7\tab}For each ID value, apply 0,1,0,0 points\par
+{\pntext\f14\'B7\tab}For each class value (or pseudo-class or attribute selector), apply 0,0,1,0 points\par
+{\pntext\f14\'B7\tab}For each element reference, apply 0,0,0,1 point\par
+
+\pard\cbpat2\widctlpar\sb100\sa100 You can generally read the values as if they were just a number, like 1,0,0,0 is "1000", and so clearly wins over a specificity of 0,1,0,0 or "100". The commas are there to remind us that this isn't really a "base 10" system, in that you could technically have a specificity value of like 0,1,13,4 - and that "13" doesn't spill over like a base 10 system would.\par
+\par
+
+\pard\cbpat2\widctlpar\s3\sb100\sa100 {\b{\field{\*\fldinst{HYPERLINK "https://css-tricks.com/specifics-on-css-specificity/#article-header-id-1"}}{\fldrslt{\ul\cf6\cf13\ul\b0 #}}}}\b\f12\fs24 Sample calculations\par
+
+\pard\cbpat2\widctlpar\sb100\sa100\b0\par
+
+\pard\widctlpar\sb300\sa300\sl276\slmult1\cf0\f7\fs20{\pict{\*\picprop}\wmetafile8\picw1764\pich882\picwgoal10\pichgoal15 
+010009000003d000000006001c00000000000400000003010800050000000b0200000000050000
+000c022d006d10040000002e0118001c000000fb021000070000000000bc020000000001020222
+53797374656d0001506718015067180101000000506718018d12e7ffffffffff040000002d0100
+00040000002d01000004000000020101001c000000fb02a4ff0000000000009001000000a20440
+002243616c6962726900000000000000000000000000000000000000000000000000040000002d
+010100040000002d010100040000002d010100050000000902000000020d000000320a57000000
+010004000000000068102c002000360005000000090200000002030000001e0007000000fc0200
+00000000000000040000002d01020008000000fa02050000000000ffffff00040000002d010300
+0e000000240305000000ffff00002b0068102b006810ffff0000ffff08000000fa020000000000
+0000000000040000002d01040007000000fc020000ffffff000000040000002d01050004000000
+2701ffff040000002d010000040000002d010000030000000000
+}\fs22\par
+
+\pard\cbpat2\widctlpar\sb100\sa100\cf1\f12\fs24\par
+
+\pard\widctlpar\sb300\sa300\sl276\slmult1\cf0\f7\fs20{\pict{\*\picprop}\wmetafile8\picw1764\pich882\picwgoal10\pichgoal15 
+010009000003d000000006001c00000000000400000003010800050000000b0200000000050000
+000c022d006d10040000002e0118001c000000fb021000070000000000bc020000000001020222
+53797374656d0001705f1801705f180101000000705f1801161212ffffffffff040000002d0100
+00040000002d01000004000000020101001c000000fb02a4ff0000000000009001000000a20440
+002243616c6962726900000000000000000000000000000000000000000000000000040000002d
+010100040000002d010100040000002d010100050000000902000000020d000000320a57000000
+010004000000000068102c002000360005000000090200000002030000001e0007000000fc0200
+00000000000000040000002d01020008000000fa02050000000000ffffff00040000002d010300
+0e000000240305000000ffff00002b0068102b006810ffff0000ffff08000000fa020000000000
+0000000000040000002d01040007000000fc020000ffffff000000040000002d01050004000000
+2701ffff040000002d010000040000002d010000030000000000
+}\fs22\par
+
+\pard\cbpat2\widctlpar\sb100\sa100\cf1\f12\fs24\par
+\b Update:\b0\~The :not() sort-of-pseudo-class adds no specificity by itself, only what's inside the parens is added to specificity value.\par
+
+\pard\widctlpar\sb300\sa300\sl276\slmult1\cf0\f7\fs20{\pict{\*\picprop}\wmetafile8\picw1764\pich882\picwgoal10\pichgoal15 
+010009000003d000000006001c00000000000400000003010800050000000b0200000000050000
+000c022d006d10040000002e0118001c000000fb021000070000000000bc020000000001020222
+53797374656d0001705f1801705f180101000000705f1801130f54ffffffffff040000002d0100
+00040000002d01000004000000020101001c000000fb02a4ff0000000000009001000000a20440
+002243616c6962726900000000000000000000000000000000000000000000000000040000002d
+010100040000002d010100040000002d010100050000000902000000020d000000320a57000000
+010004000000000068102c002000360005000000090200000002030000001e0007000000fc0200
+00000000000000040000002d01020008000000fa02050000000000ffffff00040000002d010300
+0e000000240305000000ffff00002b0068102b006810ffff0000ffff08000000fa020000000000
+0000000000040000002d01040007000000fc020000ffffff000000040000002d01050004000000
+2701ffff040000002d010000040000002d010000030000000000
+}\fs22\par
+
+\pard\cbpat2\widctlpar\sb100\sa100\cf1\f12\fs24\par
+
+\pard\widctlpar\sb300\sa300\sl276\slmult1\cf0\f7\fs20{\pict{\*\picprop}\wmetafile8\picw1764\pich882\picwgoal10\pichgoal15 
+010009000003d000000006001c00000000000400000003010800050000000b0200000000050000
+000c022d006d10040000002e0118001c000000fb021000070000000000bc020000000001020222
+53797374656d0001705f1801705f180101000000705f1801711376ffffffffff040000002d0100
+00040000002d01000004000000020101001c000000fb02a4ff0000000000009001000000a20440
+002243616c6962726900000000000000000000000000000000000000000000000000040000002d
+010100040000002d010100040000002d010100050000000902000000020d000000320a57000000
+010004000000000068102c002000360005000000090200000002030000001e0007000000fc0200
+00000000000000040000002d01020008000000fa02050000000000ffffff00040000002d010300
+0e000000240305000000ffff00002b0068102b006810ffff0000ffff08000000fa020000000000
+0000000000040000002d01040007000000fc020000ffffff000000040000002d01050004000000
+2701ffff040000002d010000040000002d010000030000000000
+}\fs22\par
+
+\pard\cbpat2\widctlpar\sb100\sa100\cf1\f12\fs24\par
+
+\pard\cbpat2\widctlpar\s3\sb100\sa100 {\b{\field{\*\fldinst{HYPERLINK "https://css-tricks.com/specifics-on-css-specificity/#article-header-id-2"}}{\fldrslt{\ul\cf6\cf13\ul\b0 #}}}}\b\f12\fs24 Important Notes\par
+
+\pard\cbpat2{\pntext\f14\'B7\tab}{\*\pn\pnlvlblt\pnf14\pnindent360{\pntxtb\'B7}}\fi-360\li720\sa75\b0 The universal selector (*) has no specificity value (0,0,0,0)\par
+{\pntext\f14\'B7\tab}Pseudo-elements (e.g. :first-line) get 0,0,0,1 unlike their psuedo-class brethren which get 0,0,1,0\par
+{\pntext\f14\'B7\tab}The pseudo-class :not() adds no specificity by itself, only what's inside it's parentheses.\par
+{\pntext\f14\'B7\tab}The\~\b !important\b0\~value appended a CSS property value is an\~\i automatic win\i0 . It overrides even inline styles from the markup. The only way an !important value can be overridden is with another !important rule declared later in the CSS and with equal or great specificity value otherwise. You could think of it as adding 1,0,0,0,0 to the specificity value.\par
+
+\pard\widctlpar\sa80\cf11\f8\fs18\par
+
+\pard\keep\keepn\widctlpar\s1\fi360\sl276\slmult1\cf0\f0\fs32\lang1033 JSON\par
+
+\pard\widctlpar\fs22 let a = \ldblquote Mehmet\rdblquote ;\par
+let k = \{a\}  equals   k = \{ a:\rdblquote Mehmet\rdblquote\}\par
+\par
+let \{ firstname, gender\} = person;  // person is a pre-defined json object.\par
+firstname  equals  \ldblquote Ahmet\rdblquote     // firstname ve gender art\'fdk de\'f0i\'feken oluyor ve bu Kabul g\'f6ren bir tan\'fdmlama \par
+gender    equals  \ldblquote male\rdblquote\tab\tab\par
+\par
+\par
+______________________________________________________________________________\par
+\par
+.tooltip \{\par
+    position: relative;\par
+    display: inline-block;\par
+    border-bottom: 1px dotted black;\par
+\}\par
+\par
+.tooltip .tooltiptext \{\par
+    visibility: hidden;\par
+\par
+    background-color: none;\par
+    color: #fff;\par
+    text-align: center;\par
+    border-radius: 6px;\par
+    padding: 5px 0;\par
+\par
+    /* Position the tooltip */\par
+    position: absolute;\par
+    margin-left:-150px;\par
+    z-index: 0;\par
+\}\par
+\par
+.tooltip:hover .tooltiptext \{\par
+    visibility: visible;\par
+\}\par
+</style>\par
+<body style="text-align:center;">\par
+\par
+<p>Move the mouse over the text below:</p>\par
+\par
+<div class="tooltip">Hover over me\par
+  <img class="tooltiptext"src="{{\field{\*\fldinst{HYPERLINK http://www.json.org/number.gif }}{\fldrslt{http://www.json.org/number.gif\ul0\cf0}}}}\f0\fs22 " height="150" width="400"> \par
+</div>\par
+\par
+\par
+ekran \f1\'e7\f13\u305?\f0 kt\f13\u305?\f0 s\f13\u305?\f0 :\par
+\par
+Move the mouse over the text below:\par
+\par
+\ul Hover over me\par
+\par
+______________________________________________________________________________\par
+\par
+\ulnone\b HTML Sayfas\f13\u305?\f0 ndaki div ve di\f13\u287?\f0 er container lar\f13\u305?\f0 n s\f13\u305?\f0 n\f13\u305?\f0 rlar\f13\u305?\f0 n\f13\u305?\f0  g\f1\'f6\f0 rebilmek ve sayfay\f13\u305?\f0  d\f1\'fc\f0 zenleyebilmek i\f1\'e7\f0 in kullan\f13\u305?\f0 labilecek ghost css kodu(css dosyas\f13\u305?\f0 na eklemek yeerli):\par
+\par
+\b0 * \{\par
+    background: #000 !important;\par
+    color: #0f0 !important;\par
+    outline: solid #f00 1px !important;\par
+  \}\par
+\par
+\ul\par
+}
+ 
